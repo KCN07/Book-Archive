@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookworm.something</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" style="color:rgb(107, 172, 9); font-weight: bolder; font-family: fantasy; font-size: xx-large;">
+                <img src="images/depositphotos_6218229-stock-illustration-book-worm.jpg" alt="" width="50" height="40" class="d-inline-block align-text-top">
+                Bookworm
+              </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+           <!-- Book search area -->
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+              <div class="d-flex ms-auto">
+                <input class=" me-2 p-1" id="search-field" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" onclick="searchBook()" >Search Books</button>
+              </div> 
+        
+          </div>
+        </div>
+    </nav>
+    <div id="spinner" class="container text-center my-5 " style="color: rgb(107, 172, 9);">
+        
+        <div class="spinner-border "  role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        Loading...
+    </div>
+    <!-- error messages -->
+    <div class="my-5 text-center">
+        <p id="error-message" class=" text-danger">No results found</p>
+        <p id="error-message1" class=" text-danger">Book's name can't be empty</p>
+    </div>
+
+    <div class="text-center " id="res">
+
+    </div>
+
+      <!-- Book search result -->
+    <div id="search-result" class="row row-cols-3 row-cols-md-2 g-4 my-5 mx-auto">
+    
+   
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
