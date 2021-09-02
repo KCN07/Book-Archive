@@ -5,8 +5,10 @@ document.getElementById('spinner').style.display = 'none';
 const toggleSpinner = displayStyle => {
     document.getElementById('spinner').style.display = displayStyle;
 }
-const toggleSearchResult = displayStyle => {
+const toggleSearchResult = (displayStyle, resu) => {
     document.getElementById('search-result').style.display = displayStyle;
+    
+    document.getElementById('res').style.display = resu;
     
 }
 
@@ -19,7 +21,7 @@ const searchBook = () =>{
     
 
     toggleSpinner('block');
-    toggleSearchResult('none');
+    toggleSearchResult('none','none');
 
     if(searchField === ''){
         toggleSpinner('none');
@@ -43,6 +45,7 @@ const displaySearchResult = data =>{
     const books = data.docs;
     const searchResult = document.getElementById('search-result');
     const res = document.getElementById('res');
+    res.textContent = '';
     searchResult.textContent = '';
     const p = document.createElement('p');
     p.style.color = "rgb(107, 172, 9)";
@@ -50,7 +53,7 @@ const displaySearchResult = data =>{
     p.style.fontSize = "x-large"
     p.innerText = `Total ${data.numFound} results found`;
     res.appendChild(p);
-
+   
     
     //console.log(data);
     let cnt = 0;
@@ -61,8 +64,8 @@ const displaySearchResult = data =>{
         
         div.classList.add('col');
         div.innerHTML = `
-           <div  class="card h-100 p-5 cards" style = "background-color: rgb(107, 172, 9); ">
-               <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" style = "border-radius: 4px; max-width: 100%; height: 200px; width: 175px; background-color: lightgray;" alt="No photo available">
+           <div  class="card h-100 p-4 cards shadow" style = "background-color: rgb(107, 172, 9); ">
+               <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" style = "border-radius: 4px; max-width:100%; height: 200px; width: 175px; background-color: lightgray;" alt="No photo available">
                <div class="card-body ">
                    <h4 class="card-title"> ${book.title}</h4>
                    <h5 class="card-title">by ${book.author_name[0]}</h5>
@@ -80,7 +83,7 @@ const displaySearchResult = data =>{
     })
 
     toggleSpinner('none');
-    toggleSearchResult('block');
+    toggleSearchResult('flex', 'block');
     document.getElementById('error-message').style.display = 'none';
     document.getElementById('error-message1').style.display = 'none';
 }
