@@ -29,7 +29,7 @@ const searchBook = () =>{
     }
 
     else{
-        fetch(`http://openlibrary.org/search.json?q=${searchField}`)
+        fetch(`https://openlibrary.org/search.json?q=${searchField}`)
             .then(res => res.json())
             .then(data => displaySearchResult(data))
             .catch(error => displayError(error))
