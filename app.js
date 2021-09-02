@@ -6,6 +6,8 @@ document.getElementById('spinner').style.display = 'none';
 const toggleSpinner = displayStyle => {
     document.getElementById('spinner').style.display = displayStyle;
 }
+//end of spinner function
+
 
 //searchclear function
 const toggleSearchResult = (displayStyle, resu) => {
@@ -14,6 +16,9 @@ const toggleSearchResult = (displayStyle, resu) => {
     document.getElementById('res').style.display = resu;
     
 }
+//end of searchclear function
+
+
 
 //book search function
 const searchBook = () =>{
@@ -38,12 +43,16 @@ const searchBook = () =>{
             .catch(error => displayError(error))
     }
 }
+//end of book search function
+
 
 //error display function
 const displayError = error => {
     toggleSpinner('none');
     document.getElementById('error-message').style.display = 'block';
 }
+//end of error display function
+
 
 
 //result after every search function
@@ -93,3 +102,5 @@ const displaySearchResult = data =>{
     document.getElementById('error-message').style.display = 'none';
     document.getElementById('error-message1').style.display = 'none';
 }
+
+//end of result after every search function
