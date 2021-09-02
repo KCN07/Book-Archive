@@ -2,9 +2,12 @@ document.getElementById('error-message').style.display = 'none';
 document.getElementById('error-message1').style.display = 'none';
 document.getElementById('spinner').style.display = 'none';
 
+//spinner function
 const toggleSpinner = displayStyle => {
     document.getElementById('spinner').style.display = displayStyle;
 }
+
+//searchclear function
 const toggleSearchResult = (displayStyle, resu) => {
     document.getElementById('search-result').style.display = displayStyle;
     
@@ -12,7 +15,7 @@ const toggleSearchResult = (displayStyle, resu) => {
     
 }
 
-
+//book search function
 const searchBook = () =>{
     const searchField = document.getElementById('search-field').value;
     document.getElementById('search-field').value = '';
@@ -36,11 +39,14 @@ const searchBook = () =>{
     }
 }
 
+//error display function
 const displayError = error => {
     toggleSpinner('none');
     document.getElementById('error-message').style.display = 'block';
 }
 
+
+//result after every search function
 const displaySearchResult = data =>{
     const books = data.docs;
     const searchResult = document.getElementById('search-result');
